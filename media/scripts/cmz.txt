@@ -1,0 +1,107 @@
+module CMZ
+{
+	imports
+	{
+		Base
+	}
+
+	item Ethanol
+	{
+
+		DisplayCategory = Food,
+		HungerChange	=	-15,
+		Weight	=	0.7,
+		Type	=	Food,
+		ThirstChange	=	-5,
+		DisplayName	=	Ethanol,
+		Alcoholic	=	TRUE,
+        UnhappyChange	=	-30,
+		ReplaceOnUse	=	WhiskeyEmpty,
+		Icon	=	Ethanolicon,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromBottleGlass,
+		AlcoholPower = 6,
+        Carbohydrates = 0,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 1500,
+        Packaged = TRUE,
+        CantBeFrozen = TRUE,
+        StaticModel = Ethanolmodel,
+        EatType = Bourbon,
+        WorldStaticModel = Ethanolworld,
+	}
+ 
+    item Methanol
+	{
+	    DisplayCategory = Household,
+		UnhappyChange	=	99,
+		Weight	=	0.6,
+		Type	=	Food,
+		ThirstChange	=	-30,
+		DisplayName	=	Methanol,
+		Icon	=	Bleach,
+		Poison = true,
+		PoisonDetectionLevel = 7,
+	    PoisonPower = 190,
+	    UseForPoison = 38,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromBottlePlastic,
+		CantBeFrozen = TRUE,
+		ReplaceOnUse	=	BleachEmpty,
+		StaticModel = BleachBottle,
+		EatType = BleachBottle,
+		WorldStaticModel = BleachBottle,
+	}
+
+	item Sodiumhydroxide
+	{
+	    DisplayCategory = Material,
+		Weight	=	0.5,
+		Type	=	Normal,
+		DisplayName	=	Sodium Hydroxide,
+		Icon	=	Concrete_Powder,
+		WorldStaticModel = BagofConcretePowder,
+	}
+
+
+
+	recipe Disinfect Bandage
+    {
+        destroy Bandage,
+        Ethanol;1,
+
+        Result:AlcoholBandage,
+        Time:40.0,
+        Category:Health,
+    }
+
+    recipe Disinfect Rag
+    {
+        destroy RippedSheets,
+        Ethanol;1,
+
+        Result:AlcoholRippedSheets,
+        Time:40.0,
+        Category:Health,
+    }
+
+    recipe Make Molotov Cocktail
+    {
+       Ethanol;1,
+       RippedSheets/RippedSheetsDirty,
+
+       Result:Molotov,
+       Time:50.0,
+    }
+	recipe Make Soap
+    {
+        OilVegetable;1,
+		Sodiumhydroxide;1,
+		Pot,
+
+        Result:Soap2,
+        Category:Health,
+        Time:90,
+    }
+}
