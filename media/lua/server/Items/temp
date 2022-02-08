@@ -1,0 +1,10 @@
+local quimicosspawn = {
+    "CratePaint", 5,
+    "CrateConcrete", 5,
+    "CrateFarming", 5,
+    "CrateMetalwork", 5,
+    "CratePlaster", 5,
+    "CrateTools", 5,
+    "GarageTools", 5,
+    "GarageMetalwork", 5,
+  }

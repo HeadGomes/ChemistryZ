@@ -1,15 +1,15 @@
 module Base
 {
-  model Ethanolmodel
-  {
-    mesh = PopCanDiet,
-    texture = WorldItems/Ethanolworld,
-  }
-  
   model Ethanolworld
   {
     mesh = WhiskeyBottle,
     texture = WorldItems/Ethanolworld,
   }
   
+  model Hydroxideworld
+  {
+    mesh = Jar,
+    texture = WorldItems/Hydroxideworld,
+    scale = 0.9,
+  }
 }

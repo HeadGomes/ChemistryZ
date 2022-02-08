@@ -56,12 +56,14 @@ module CMZ
 
 	item Sodiumhydroxide
 	{
-	    DisplayCategory = Material,
+	    DisplayCategory = Household,
 		Weight	=	0.5,
 		Type	=	Normal,
 		DisplayName	=	Sodium Hydroxide,
-		Icon	=	Concrete_Powder,
-		WorldStaticModel = BagofConcretePowder,
+		Packaged = TRUE,
+		Icon	=	Hydroxideicon,
+		StaticModel = Hydroxideworld,
+		WorldStaticModel = Hydroxideworld,
 	}
 
 
