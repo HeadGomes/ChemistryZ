@@ -8,8 +8,14 @@ module Base
   
   model Hydroxideworld
   {
-    mesh = Jar,
+    mesh = JarLid,
     texture = WorldItems/Hydroxideworld,
-    scale = 0.9,
+    scale = 1.3,
+  }
+
+model Methanolworld
+  {
+    mesh = BleachBottle,,
+    texture = WorldItems/Methanolworld,
   }
 }

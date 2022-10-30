@@ -27,7 +27,7 @@ module CMZ
         Calories = 1500,
         Packaged = TRUE,
         CantBeFrozen = TRUE,
-        StaticModel = Ethanolmodel,
+        StaticModel = Ethanolworld,
         EatType = Bourbon,
         WorldStaticModel = Ethanolworld,
 	}
@@ -51,7 +51,7 @@ module CMZ
 		ReplaceOnUse	=	BleachEmpty,
 		StaticModel = BleachBottle,
 		EatType = BleachBottle,
-		WorldStaticModel = BleachBottle,
+		WorldStaticModel = Methanolworld,
 	}
 
 	item Sodiumhydroxide
@@ -98,11 +98,11 @@ module CMZ
     }
 	recipe Make Soap
     {
-        OilVegetable;1,
-		Sodiumhydroxide;1,
-		Pot,
+        OilVegetable/OilOlive,
+	Sodiumhydroxide/BakingSoda,
+	Pot,
 
-        Result:Soap2,
+        Result:Soap2=3,
         Category:Health,
         Time:90,
     }
