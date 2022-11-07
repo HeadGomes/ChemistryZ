@@ -1,18 +1,23 @@
+
 Items:
 
-  Ethanol: You can drink, clean something and set things on fire.
+Ethanol: You can drink, clean something and set things on fire.
 
-  Methanol: You really die.
+Methanol: You really die.
 
-  Sodium hydroxide: Use it to make soap.
+Sodium hydroxide: Use it to make soap and more...
 
 Recipes:
- 
-  Soap(3 unit) = Vegetable Oil/Olive Oil + Sodium Hydroxide/Baking Soda
 
-  Sterilized Bandage/Sterilized Rag(1 unit) = Bandage/Ripped Sheets + Ethanol
+Biofuel = Pot + Vegetable Oil(3) + Methanol(9) + Sodium Hydroxide(2) + empty gas can + WoodenStick
 
-  Molotov Cocktail = Ripped Sheets/Dirty Rag + Ethanol
+Soap(3 unit) = Pot + Vegetable Oil/Olive Oil + Sodium Hydroxide/Baking Soda + WoodenStick
+
+Sterilized Bandage/Sterilized Rag(1 unit) = Bandage/Ripped Sheets + Ethanol
+
+Molotov Cocktail = Ripped Sheets/Dirty Rag + Ethanol
+
+
 
 
 
