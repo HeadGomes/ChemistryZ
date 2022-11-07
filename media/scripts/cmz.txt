@@ -10,7 +10,7 @@ module CMZ
 
 		DisplayCategory = Food,
 		HungerChange	=	-15,
-		Weight	=	0.7,
+		Weight	=	0.78,
 		Type	=	Food,
 		ThirstChange	=	-5,
 		DisplayName	=	Ethanol,
@@ -24,7 +24,7 @@ module CMZ
         Carbohydrates = 0,
         Proteins = 0,
         Lipids = 0,
-        Calories = 1500,
+        Calories = 900,
         Packaged = TRUE,
         CantBeFrozen = TRUE,
         StaticModel = Ethanolworld,
@@ -36,15 +36,15 @@ module CMZ
 	{
 	    DisplayCategory = Household,
 		UnhappyChange	=	99,
-		Weight	=	0.6,
+		Weight	=	0.79,
 		Type	=	Food,
 		ThirstChange	=	-30,
 		DisplayName	=	Methanol,
-		Icon	=	Bleach,
+		Icon	=	Methanolicon,
 		Poison = true,
 		PoisonDetectionLevel = 7,
-	    PoisonPower = 190,
-	    UseForPoison = 38,
+	    	PoisonPower = 190,
+	    	UseForPoison = 38,
 		CustomContextMenu = Drink,
 		CustomEatSound = DrinkingFromBottlePlastic,
 		CantBeFrozen = TRUE,
@@ -69,41 +69,58 @@ module CMZ
 
 
 	recipe Disinfect Bandage
-    {
+	{
         destroy Bandage,
         Ethanol;1,
 
         Result:AlcoholBandage,
         Time:40.0,
         Category:Health,
-    }
+	}
 
-    recipe Disinfect Rag
-    {
-        destroy RippedSheets,
+	recipe Disinfect Rag
+	{
+	destroy RippedSheets,
         Ethanol;1,
 
         Result:AlcoholRippedSheets,
         Time:40.0,
         Category:Health,
-    }
+	}
 
-    recipe Make Molotov Cocktail
-    {
-       Ethanol;1,
-       RippedSheets/RippedSheetsDirty,
+	recipe Make Molotov Cocktail
+	{
+	Ethanol;1,
+	RippedSheets/RippedSheetsDirty,
 
-       Result:Molotov,
-       Time:50.0,
-    }
+	Result:Molotov,
+	Time:50.0,
+	}
+
 	recipe Make Soap
-    {
+	{
         OilVegetable/OilOlive,
 	Sodiumhydroxide/BakingSoda,
-	Pot,
+	WoodenStick/TreeBranch/SpearCrafted,
+	keep Pot,
 
         Result:Soap2=3,
         Category:Health,
-        Time:90,
-    }
+        Time:2300.0,
+	}
+
+        recipe Make Biofuel
+	{
+        keep Pot,
+        OilVegetable=3,
+	Methanol= 9,
+	Sodiumhydroxide=2,
+        EmptyPetrolCan=1,
+        WoodenStick/TreeBranch/SpearCrafted,
+		
+        Result:PetrolCan,
+        Time:4000.0,
+	AnimNode: Disassemble,
+	Category:Survivalist,		
+        }
 }
