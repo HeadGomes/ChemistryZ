@@ -29,7 +29,8 @@ local alcoholspawnTable = {
 local alcoholitemTable = {}
 
   alcoholitemTable = {
-    "CMZ.Ethanol", 5,
+	"CMZ.Ethanol", 5,
+	"CMZ.Clwater", 3,
   }
 
 

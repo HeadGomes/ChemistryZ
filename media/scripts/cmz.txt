@@ -24,7 +24,7 @@ module CMZ
         Carbohydrates = 0,
         Proteins = 0,
         Lipids = 0,
-        Calories = 900,
+        Calories = 1500,
         Packaged = TRUE,
         CantBeFrozen = TRUE,
         StaticModel = Ethanolworld,
@@ -43,8 +43,8 @@ module CMZ
 		Icon	=	Methanolicon,
 		Poison = true,
 		PoisonDetectionLevel = 7,
-	    	PoisonPower = 190,
-	    	UseForPoison = 38,
+	    PoisonPower = 250,
+	    UseForPoison = 40,
 		CustomContextMenu = Drink,
 		CustomEatSound = DrinkingFromBottlePlastic,
 		CantBeFrozen = TRUE,
@@ -66,9 +66,22 @@ module CMZ
 		WorldStaticModel = Hydroxideworld,
 	}
 
+	item Clwater
+	{
+
+	   DisplayCategory = FirstAid,
+		Weight	=	0.1,
+		Type	=	Normal,
+		DisplayName	=	Purification Tablets,
+		Icon	=	Clwatericon,
+		StaticModel = Clwaterworld,
+		WorldStaticModel = Clwaterworld,
+	}
+	
 
 
-	recipe Disinfect Bandage
+
+		recipe Disinfect Bandage
 	{
         destroy Bandage,
         Ethanol;1,
@@ -78,31 +91,32 @@ module CMZ
         Category:Health,
 	}
 
-	recipe Disinfect Rag
+		recipe Disinfect Rag
 	{
-	destroy RippedSheets,
+		
         Ethanol;1,
 
         Result:AlcoholRippedSheets,
         Time:40.0,
         Category:Health,
+		destroy RippedSheets,
 	}
 
-	recipe Make Molotov Cocktail
+		recipe Make Molotov Cocktail
 	{
-	Ethanol;1,
-	RippedSheets/RippedSheetsDirty,
+		Ethanol;1,
+		RippedSheets/RippedSheetsDirty,
 
-	Result:Molotov,
-	Time:50.0,
+		Result:Molotov,
+		Time:50.0,
 	}
 
-	recipe Make Soap
+		recipe Make Soap
 	{
         OilVegetable/OilOlive,
-	Sodiumhydroxide/BakingSoda,
-	WoodenStick/TreeBranch/SpearCrafted,
-	keep Pot,
+		Sodiumhydroxide/BakingSoda,
+		WoodenStick/TreeBranch/SpearCrafted,
+		keep Pot,
 
         Result:Soap2=3,
         Category:Health,
@@ -113,14 +127,48 @@ module CMZ
 	{
         keep Pot,
         OilVegetable=3,
-	Methanol= 9,
-	Sodiumhydroxide=2,
-        EmptyPetrolCan=1,
-        WoodenStick/TreeBranch/SpearCrafted,
+		Methanol= 9,
+		Sodiumhydroxide=2,
+    	EmptyPetrolCan=1,
+    	WoodenStick/TreeBranch/SpearCrafted,
 		
-        Result:PetrolCan,
-        Time:4000.0,
-	AnimNode: Disassemble,
-	Category:Survivalist,		
-        }
+    	Result:PetrolCan,
+    	Time:4000.0,
+		AnimNode: Disassemble,
+		Category:Survivalist,		
+    }
+
+	recipe Make Clean Water
+	{
+		Clwater=1,
+		destroy WaterPot,
+
+		Result:WaterPot,
+		Time:1000.0,
+		Category:Survivalist,
+	}
+
+	recipe Make Clean Water
+	{
+		Clwater=1,
+		destroy BucketWaterFull,
+
+		Result:BucketWaterFull,
+		Time:1000.0,
+		Category:Survivalist,
+	}
+
+	recipe Make Clean Water
+	{
+		Clwater=1,
+		destroy WaterSaucepan,
+
+		Result:WaterSaucepan,
+		Time:1000.0,
+		Category:Survivalist,
+	}
+	
 }
+
+
+

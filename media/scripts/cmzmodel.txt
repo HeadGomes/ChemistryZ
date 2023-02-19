@@ -13,9 +13,15 @@ module Base
     scale = 1.3,
   }
 
-model Methanolworld
+  model Methanolworld
   {
-    mesh = BleachBottle,,
+    mesh = BleachBottle,
     texture = WorldItems/Methanolworld,
+  }
+  model Clwaterworld
+  {
+    mesh = WorldItems/SleepingTablets,
+    texture = WorldItems/Clwaterworld,
+    scale = 0.4,
   }
 }
