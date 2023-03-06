@@ -5,32 +5,19 @@ require "Vehicles/VehicleDistributions"
 local i, j
 
 local alcoholspawnTable = {
-  "BandPracticeFridge", 5,
-  "CrateTools", 2,
-  "StoreCounterCleaning", 5,
+  "CrateTools", 6,
+  "StoreCounterCleaning", 7,
   "BathroomCabinet", 5,
   "BathroomCounter", 5,
-  "BathroomCounterEmpty", 5,
-  "MedicalClinicDrugs", 5,
-  "BarCounterLiquor", 2,
-  "BarCounterWeapon", 3,
-  "BarShelfLiquor", 4,
-  "BarShelfLiquor", 2,
-  "BreweryCans", 6,
-  "BreweryCans", 4,
-  "FridgeBeer", 4,
+  "BathroomCounterEmpty", 2,
+  "MedicalClinicDrugs", 8,
   "KitchenBottles", 2,
-  "StoreShelfBeer", 4,
-  "StoreShelfBeer", 2,
-  "FridgeTrailerPark", 5,
-  "FridgeTrailerPark", 2,
 }
 
 local alcoholitemTable = {}
 
   alcoholitemTable = {
-	"CMZ.Ethanol", 5,
-	"CMZ.Clwater", 3,
+	"CMZ.Ethanol", 2,
   }
 
 
@@ -44,25 +31,22 @@ end
 
 local quimicosspawn = {
   "CrateTools", 6,
-  "StoreCounterCleaning", 5,
-  "BathroomCabinet", 1,
-  "BathroomCounter", 1,
-  "BathroomCounterEmpty", 1,
-  "ArtSupplies", 6,
-  "GarageTools",4,
+  "StoreCounterCleaning", 4,
+  "ArtSupplies", 8,
+  "GarageTools",6,
   "CratePaint", 6,
-  "GarageCarpentry", 5,
-  "GarageMechanics", 5,
-  "JanitorChemicals", 6,
-  "GasStorageMechanics", 4,
+  "GarageCarpentry", 2,
+  "GarageMechanics", 2,
+  "JanitorChemicals", 5,
+  "GasStorageMechanics", 3,
 }
 
 local quimicositem = {}
 
   quimicositem = {
-    "CMZ.Ethanol", 5,
-    "CMZ.Sodiumhydroxide", 5,
-    "CMZ.Methanol", 5,
+    "CMZ.Ethanol", 3,
+    "CMZ.Sodiumhydroxide", 2,
+    "CMZ.Methanol", 2,
   }
 
 
@@ -70,5 +54,24 @@ for i = 1, #quimicosspawn, 2 do
   for j = 1, #quimicositem, 2 do
     table.insert(ProceduralDistributions.list[quimicosspawn[i]].items, quimicositem[j])
     table.insert(ProceduralDistributions.list[quimicosspawn[i]].items, quimicosspawn[i+1] * quimicositem[j+1])
+  end
+end
+
+
+local clwaterspawn = {
+  "MedicalClinicDrugs", 7,
+}
+
+local clwateritem = {}
+
+  clwateritem = {
+    "CMZ.Clwater", 2,
+  }
+
+
+for i = 1, #clwaterspawn, 2 do
+  for j = 1, #clwateritem, 2 do
+    table.insert(ProceduralDistributions.list[clwaterspawn[i]].items, clwateritem[j])
+    table.insert(ProceduralDistributions.list[clwaterspawn[i]].items, clwaterspawn[i+1] * clwateritem[j+1])
   end
 end
