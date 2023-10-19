@@ -126,9 +126,9 @@ module CMZ
         recipe Make Biofuel
 	{
         keep Pot,
-        OilVegetable=3,
-		Methanol= 9,
-		Sodiumhydroxide=2,
+        OilVegetable=4,
+		Methanol=1,
+		Sodiumhydroxide=1,
     	EmptyPetrolCan=1,
     	WoodenStick/TreeBranch/SpearCrafted,
 		
@@ -137,6 +137,23 @@ module CMZ
 		AnimNode: Disassemble,
 		Category:Survivalist,		
     }
+
+        recipe Make Biofuel
+	{
+        keep Pot,
+        OilOlive=4,
+		Methanol=1,
+		Sodiumhydroxide=1,
+    	EmptyPetrolCan=1,
+    	WoodenStick/TreeBranch/SpearCrafted,
+		
+    	Result:PetrolCan,
+    	Time:4000.0,
+		AnimNode: Disassemble,
+		Category:Survivalist,		
+    }
+
+
 
 	recipe Make Clean Water
 	{
