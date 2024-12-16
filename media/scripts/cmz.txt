@@ -21,10 +21,12 @@ module CMZ
 		CustomContextMenu = Drink,
 		CustomEatSound = DrinkingFromBottleGlass,
 		AlcoholPower = 6,
-        Carbohydrates = 0,
+		Tooltip = Tooltip_Painkillers,
+        Carbohydrates = 1000,
         Proteins = 0,
         Lipids = 0,
         Calories = 1500,
+		ReplaceOnUse = WhiskeyEmpty,
         Packaged = TRUE,
         CantBeFrozen = TRUE,
         StaticModel = Ethanolworld,
@@ -43,8 +45,8 @@ module CMZ
 		Icon	=	Methanolicon,
 		Poison = true,
 		PoisonDetectionLevel = 7,
-	    PoisonPower = 250,
-	    UseForPoison = 40,
+	    PoisonPower = 120,
+	    UseForPoison = 38,
 		CustomContextMenu = Drink,
 		CustomEatSound = DrinkingFromBottlePlastic,
 		CantBeFrozen = TRUE,
@@ -77,8 +79,32 @@ module CMZ
 		StaticModel = Clwaterworld,
 		WorldStaticModel = Clwaterworld,
 	}
-	
+	item SimpleDest
+	{
 
+	  DisplayCategory = Water,
+		Weight	=	2.5,
+		UseWhileEquipped	=	FALSE,
+		UseDelta	=	0.07,
+		DisplayName	=	Empty Simple Destiller,
+		ReplaceOnUseOn	=	WaterSource-FullKettle,
+		Icon	=	Destilericon,
+		StaticModel = Kettle,
+		WorldStaticModel = KettleGround,
+	}
+	item SimpleDestFull
+	{
+
+	  DisplayCategory = Water,
+		Weight	=	3.5,
+		UseWhileEquipped	=	FALSE,
+		UseDelta	=	0.07,
+		DisplayName	=	Simple Destiller Full,
+		ReplaceOnUseOn	=	SimpleDest,
+		Icon	=	Destilericon,
+		StaticModel = Kettle,
+		WorldStaticModel = KettleGround,
+	}
 
 
 		recipe Disinfect Bandage
@@ -185,6 +211,25 @@ module CMZ
 		Category:Survivalist,
 	}
 	
+	recipe Fermented Must
+	{
+		SimpleDest=1,
+		Sugar=1,
+		Yeast=1,
+		Result:SimpleDestFull,
+		Time:600.0,
+		Category:Survivalist,
+	}
+
+	recipe Make Simple Destiller
+	{
+        Kettle=1
+		MetalPipe=1
+        CanBeDoneFromFloor:true,
+        Result:SimpleDest,
+        Time:2000.0,
+        Category:Survivalist,
+	}
 }
 
 

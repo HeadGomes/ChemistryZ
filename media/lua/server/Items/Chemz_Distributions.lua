@@ -6,18 +6,18 @@ local i, j
 
 local alcoholspawnTable = {
   "CrateTools", 6,
-  "StoreCounterCleaning", 8,
-  "BathroomCabinet", 8,
-  "BathroomCounter", 8,
-  "BathroomCounterEmpty", 3,
+  "StoreCounterCleaning", 7,
+  "BathroomCabinet", 5,
+  "BathroomCounter", 5,
+  "BathroomCounterEmpty", 2,
   "MedicalClinicDrugs", 8,
-  "KitchenBottles", 4,
+  "KitchenBottles", 2,
 }
 
 local alcoholitemTable = {}
 
   alcoholitemTable = {
-	"CMZ.Ethanol", 3,
+	"CMZ.Ethanol", 2,
   }
 
 
@@ -31,14 +31,14 @@ end
 
 local quimicosspawn = {
   "CrateTools", 6,
-  "StoreCounterCleaning", 6,
+  "StoreCounterCleaning", 4,
   "ArtSupplies", 8,
   "GarageTools",6,
-  "CratePaint", 8,
+  "CratePaint", 6,
   "GarageCarpentry", 2,
   "GarageMechanics", 2,
-  "JanitorChemicals", 8,
-  "GasStorageMechanics", 6,
+  "JanitorChemicals", 5,
+  "GasStorageMechanics", 3,
 }
 
 local quimicositem = {}
